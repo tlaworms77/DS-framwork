@@ -1,0 +1,617 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-color: #DBE0E3;
+	user-select: none;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
+
+h1 {
+	background-color: inherit
+}
+
+textarea {
+	background-color: white;
+}
+
+iframe {
+	background-color: white;
+}
+.tutorial-content-path p {
+	color: darkgray;
+}
+.editor-result {
+	margin-left:15px;
+	margin-top:8px;
+	background: url(../images/play.svg) no-repeat 92% 50%;
+	background-size: 20px;
+	height: 30px;
+	width: 70px;
+	padding:5px;
+	border: 1px solid #ccc;
+    background-color:rgba(0,0,0,0);
+    font-size: 20px;
+    border-radius: 4px;
+    color: #686868;
+}
+
+#tutorial-contents.editor .editor-button {
+	font-size: 0;
+}
+#tutorial-contents.editor .editor-html{
+	background: url(../images/html.svg) no-repeat;
+	width: 60px;
+    background-size: contain;
+    height: 58px;
+    background-color:rgba(0,0,0,0) !important;
+}
+#tutorial-contents.editor .editor-css{
+	background: url(../images/gray-css.svg) no-repeat;
+	width: 60px;
+    background-size: contain;
+    height: 58px;
+    background-color:rgba(0,0,0,0) !important;
+}
+#tutorial-contents.editor .editor-js{
+	background: url(../images/gray-js.svg) no-repeat;
+	width: 60px;
+    background-size: contain;
+    height: 58px;
+    background-color:rgba(0,0,0,0) !important;
+}
+
+#tutorial-contents.editor .editor-source-css+div
+	{
+	display: none;
+}
+
+#tutorial-contents.editor .editor-source-js+div
+	{
+	display: none;
+}
+#tutorial-contents.editor .button-box .editor-html {
+	background-color: #CBCBCB;
+}
+
+
+.CodeMirror-code {
+	max-height:180px;	
+}
+
+.CodeMirror-vscrollbar {
+	overflow-y:hidden !important;
+}
+
+.CodeMirror-gutter {
+	width: 29px !important;
+}
+
+.CodeMirror-sizer {
+	margin-left: 30px !important;
+	margin-bottom: -17px !important;
+	border-right-width: 13px !important;
+	padding-right: 0px !important;
+	padding-bottom: 0px !important;
+}
+.CodeMirror-linenumber .CodeMirror-gutter-elt{
+	width:22px !important;
+	left:0px !important;
+}
+
+.CodeMirror {
+	width: 100%;
+	height: auto !important;
+	border-radius: 4px;
+}
+
+.CodeMirror-lines {
+	padding: 7px 0 !important;
+}
+
+.CodeMirror div {
+	background-color: rgba(0, 0, 0, 0)
+}
+
+.CodeMirror-gutters {
+	height: 42px;
+	background-color: #f7f7f7 !important;
+}
+
+.CodeMirror div span {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.tutorial-component-description-box h3 {
+	margin-top: 20px;
+	color: #686868;
+	background: rgba(0, 0, 0, 0);
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+}
+
+.tutorial-component-description {
+	font-size: 14px;
+	color: #686868;
+}
+
+.tutorial-component-description p {
+	background-color: rgba(0, 0, 0, 0);
+	padding-top: 4px;
+}
+
+.tutorial-component-description h3 {
+	background-color: rgba(0, 0, 0, 0);
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.tutorial-component-description .ds-tag-class {
+	background-color: rgba(0, 0, 0, 0);
+	color: #00c;
+	font-size: 14px;
+}
+
+.tutorial-component-description .ds-tag-value {
+	background-color: rgba(0, 0, 0, 0);
+	color: #c7254e;
+	font-size: 14px;
+}
+
+/* tutorial-header */
+#tutorial-header {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	background-color: white;
+	z-index: 10;
+	border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+	/* box-sizing: border-box; */
+}
+
+#tutorial-header a {
+	background-color: rgba(0, 0, 0, 0);
+	color:black;
+}
+
+#tutorial-header>h1 {
+	position: absolute;
+	line-height: 70px;
+	left: 0%;
+	margin: 0 20px;
+	background-color: inherit;
+}
+
+#tutorial-header>p {
+	position: absolute;
+	line-height: 70px;
+	right: 0%;
+	margin: 0 20px;
+	background-color: inherit;
+}
+
+/* tutorial-navigator */
+#tutorial-navi {
+	position: fixed;
+	left: 0%;
+	top: 70px;
+	margin: 16px;
+	width: 180px;
+	overflow: auto;
+	max-height: calc(100% - 102px);
+	background-color: white;
+}
+
+#tutorial-navi::-webkit-scrollbar {
+	display: none;
+}
+
+#tutorial-navi .tutorial-navi-index {
+	display: flex;
+	height: 50px;
+	cursor: pointer;
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);
+	border-right: 0.5px solid rgba(0, 0, 0, 0.4);
+	border-left: 0.5px solid rgba(0, 0, 0, 0.4);
+	box-sizing: border-box;
+	background-color: white;
+}
+
+#tutorial-navi .tutorial-navi-index>.tutorial-navi-icon {
+	flex: 1.5;
+	text-align: center;
+	line-height: 50px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#tutorial-navi .icon {
+	width: 16px;
+	height: 16px;
+	margin: 17px 0;
+	background-color: inherit;
+}
+
+#tutorial-navi .tutorial-navi-index>.tutorial-navi-title {
+	flex: 4.5;
+	line-height: 50px;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 14px;
+	color:black;
+}
+
+#tutorial-navi .tutorial-navi-index>.tutorial-navi-arrow {
+	flex: 1;
+	text-align: center;
+	line-height: 50px;
+	transition: 0.3s;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#tutorial-navi .sub-navis {
+	display: none;
+	background-color: #F1F1F1;
+	font-size:13px;
+}
+
+#tutorial-navi .sub-navi {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 16px;
+	border-left: 0.5px solid rgba(0, 0, 0, 0.4);
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);
+	border-right: 0.5px solid rgba(0, 0, 0, 0.4);
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: #F3F3F3;
+}
+
+.sub-navi a {
+	width: 100%;
+	background-color: #F3F3F3;
+	color:black;
+}
+
+/* tutorial-contents */
+#tutorial-content-box {
+	padding: 70px 0;
+	z-index: 2;
+}
+
+#tutorial-contents {
+	position: absolute;
+	/* flex-direction: column; */
+	width: calc(100% - 232px);
+	/* height: 100%; */
+	/* height: calc(100% - 70px); */
+	margin: 16px;
+	/* padding : 8px; */
+	top: 70px;
+	left: 200px;
+	background-color: white;
+}
+.tutorial-contents-main {
+	height:200px;
+	position: absolute;
+	/* flex-direction: column; */
+	width: calc(100% - 232px);
+	/* height: 100%; */
+	/* height: calc(100% - 70px); */
+	margin: 16px;
+	/* padding : 8px; */
+	top: 70px;
+	left: 200px;
+	background-color: white;
+}
+.tutorial-main-code{
+	top:302px;
+}
+.tutorial-main-pres{
+	top: 534px;
+}
+
+#tutorial-contents>.tutorial-content-title {
+	height: 80px;
+	/* background-color: inherit; */
+}
+
+#tutorial-contents>.long-title {
+	height: 100px;
+	/* background-color: inherit; */
+}
+
+#tutorial-contents>.tutorial-content-title>.tutorial-content-path {
+	margin-top:4px;
+}
+
+#tutorial-contents>.tutorial-content-desc {
+	background-color: white;
+	padding: 0 32px 16px 16px;
+}
+
+#tutorial-contents>.tutorial-content-desc>.sub-title {
+	background-color: inherit;
+}
+
+#tutorial-contents>.tutorial-content-desc>.sub-title>h1 {
+	height: 60px;
+	line-height: 60px;
+	/* border-bottom: 1px solid gray; */
+}
+
+#tutorial-contents>.tutorial-content-desc>.tutorial-component {
+	position: relative;
+	background-color: inherit;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#tutorial-contents>.tutorial-content-desc>.tutorial-component>.tutorial-component-description-box
+	{
+	position: relative;
+	background-color: white;
+	width: calc(100% - 450px);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#tutorial-contents .tutorial-component-source{
+	position: relative;
+	display: flex;
+	top: 0;
+	left: 0;
+	width: 99%;
+	/* max-height: 200px; */
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+#tutorial-contents .tutorial-source-line {
+	appearance: none;
+	text-align: right;
+	overflow: hidden;
+	width: 30px;
+	resize: none;
+}
+
+#tutorial-contents .tutorial-sourcecode {
+	width: calc(100% - 30px);
+	resize: none;
+}
+
+#tutorial-contents .tutorial-component-view {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 360px;
+	height: 640px;
+	/* width: 414px; */
+	/* height: 736px; */
+	/* padding: 8px; */
+	background-color: white;
+	/* background-color: inherit; */
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-family: 'Nunito', sans-serif;
+}
+
+#tutorial-contents .tutorial-component-description {
+	/* float: right; */
+	/* top: 0; */
+	position: relative;
+	padding-top: 3px;
+	padding-bottom: 7px;
+	width: 99.5%;
+	/* height: 400px; */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.editor {
+	height: calc(100% - 120px);
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+}
+.editor h2 {
+	margin-top: 15px;
+	color: #686868;
+	background: rgba(0, 0, 0, 0);
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 20px;
+}
+
+.editor-button-title-box{
+	background-color:rgba(0,0,0,0);	
+}
+.editor-h3 {
+	/* text-align:center; */
+	width: 100px;
+    background: rgba(0,0,0,0);
+    float: left;   
+}
+#tutorial-contents div .button-box {
+	display: flex;
+	background-color: rgba(0,0,0,0);
+	padding-left:15px;
+}
+
+#tutorial-contents.editor>.editor-component-source {
+	position: relative;
+	display: flex;
+	top: 0;
+	left: 0;
+	width: calc(100% - 16px);
+	height: 500px;
+	border-radius: 4px;
+	background-color: inherit;
+	border: 1px solid #ccc;
+}
+
+#tutorial-contents .editor-source-line {
+	appearance: none;
+	text-align: right;
+	overflow: hidden;
+	width: 30px;
+	resize: none;
+}
+
+#tutorial-contents.editor .editor-component-source .editor-source-css {
+	display: none;
+}
+
+#tutorial-contents.editor .editor-component-source .editor-source-js {
+	display: none;
+}
+
+#frame-popup {
+	display: none;
+	z-index: 2000;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	width: calc(9 * 50px);
+    height: calc(16 * 50px);
+    /* border:1px solid black; */
+    background-color:rgba(0,0,0,0);
+	
+}
+#frame-popup .editor-phone {
+	/* background: white url(../images/iphone1.png) no-repeat; */
+	background: rgba(0,0,0,0) url(../images/iphone1.png) no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-position: center;
+	position: relative;
+}
+
+/* #frame-popup .popup-titlebar {
+	display: flex;
+	justify-content: space-between;
+	width: 360px;
+	height: 21px;
+	border-bottom: 1px solid black;
+	box-sizing: border-box;
+} */
+
+/* #frame-popup .popup-titlebar p {
+	padding: 0 5px;
+} */
+
+/* #frame-popup .popup-titlebar .popup-close {
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background-color: pink;
+	text-align: center;
+	cursor: pointer;
+} */
+.popup-close {
+	width: 50px;
+	height: 50px;
+	background-color: pink;
+	text-align: center;
+	cursor: pointer;
+	z-index: 5000;
+    position: absolute;
+    border-radius: 50%;
+    top: 704px;
+    left: 202px;
+}
+
+#frame-popup #popupframe {
+	width: 344px;
+    height: 586px;
+    position: absolute;
+    top: calc(50% - 295px);
+    left: calc(50% - 172px);
+    border: 1px solid #A2A2A2;
+}
+
+/* 성민이 폰 디자인 */
+.phone {
+	width: calc(9 * 40px);
+	height: calc(16 * 40px);
+	/* border:1px solid black; */
+	/* background:url(../images/mobile.png) fixed; */
+}
+
+.phone img {
+	width: 100%;
+	height: 100%;
+}
+
+.window {
+	top: 73px;
+	left: 43px;
+	background-color: white;
+	position: absolute;
+	width: calc(9 * 30px + 5px);
+	height: calc(16 * 30px);
+	border: 1px solid black;
+}
+
+.phone2 {
+	width: calc(9 * 50px);
+	height: calc(16 * 50px);
+	float: right;
+	/* border:1px solid black; */
+}
+
+.phone2 div {
+	background: white url(../images/iphone1.png) no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-position: center;
+	position: relative;
+}
+
+
+.window2 {
+	/* top:95px; */
+	/* left:22px; */
+	top: calc(50% - 293px);
+	left: calc(50% - 172px);
+	background-color: white;
+	position: absolute;
+	/* width: 330px; */
+	width: 344px;
+	height: 586px;
+	border: 1px solid #A2A2A2;
+}
+
+#tutorial-contents.editor > .button-box {
+	baground-color:rgba(0,0,0,0);
+	margin-bottom:20px;
+	
+}
